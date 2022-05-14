@@ -4,6 +4,7 @@
   "description": "This is a chat application based on node js and socketio",
   "main": "index.js",
   "scripts": {
+    "start" : "NODE_ENV=development nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
