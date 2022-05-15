@@ -1,7 +1,12 @@
-/* eslint-disable indent */
+// external imports
 const express = require('express');
 const dotenv = require('dotenv');
 const mongoose = require('mongoose');
+const path = require('path');
+const cookieParser = require('cookie-parser');
+
+// eternal imports
+const { notFoundHandler, errorHandler } = require('./middleware/common/errorhandler');
 
 const app = express();
 dotenv.config();
@@ -16,9 +21,28 @@ mongoose
     .then(() => console.log('connection successfull'))
     .catch((e) => console.log(e));
 
+// request parser
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+// set view engine
+app.set('view engine', 'ejs');
+
+// set static folder
+app.use(express.static(path.join(__dirname, 'public')));
+
+// parse cookies
+app.use(cookieParser(process.env.COOKIE_PARSER));
+
+// routing setup
+// error handling
+// 404 not found handler
+app.use(notFoundHandler);
+// common error handler
+app.use(errorHandler);
+
+// start the application
 app.listen(process.env.PORT, () => {
-    console.log('app is runng');
+    console.log('app is listening');
 });
