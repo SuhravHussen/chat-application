@@ -35,5 +35,6 @@
       }
     ]
   },
+  "eslintIgnore": ["toastify.js", "world.js"],
   "plugins": ["prettier"]
 }
