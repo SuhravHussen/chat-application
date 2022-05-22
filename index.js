@@ -4,14 +4,25 @@ const dotenv = require('dotenv');
 const mongoose = require('mongoose');
 const path = require('path');
 const cookieParser = require('cookie-parser');
-
+const http = require('http');
+const moment = require("moment");
 // eternal imports
 const { notFoundHandler, errorHandler } = require('./middleware/common/errorhandler');
 const loginRouter = require('./routers/loginRouter');
 const usersRouter = require('./routers/usersRouter');
 const inboxRouter = require('./routers/inboxRouter');
 const app = express();
+const server = http.createServer(app);
 dotenv.config();
+
+
+// socket creation
+// @ts-ignore
+const io = require("socket.io")(server);
+global.io = io;
+
+// set moment as app locals
+app.locals.moment = moment;
 
 // database connection
 mongoose
@@ -49,6 +60,8 @@ app.use(notFoundHandler);
 app.use(errorHandler);
 
 // start the application
-app.listen(process.env.PORT, () => {
-    console.log('app is listening');
+
+
+server.listen(process.env.PORT, () => {
+  console.log(`app listening to port ${process.env.PORT}`);
 });
