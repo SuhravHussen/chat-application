@@ -29,10 +29,10 @@
 **If you want to use the app first go the live link. We have two user id for your testing.**
 
 ```bash
- user one : emaple@gmail.com
+ user one : example@gmail.com
  password : Example123!
  
-  user two : emaple2@gmail.com
+  user two : example2@gmail.com
  password : Example123!
 ```
 **You can login with both of them in different browser and create conversation with one another. Then you will be able to chat with one another**
