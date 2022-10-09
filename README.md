@@ -38,7 +38,7 @@
 **You can login with both of them in different browser and create conversation with one another. Then you will be able to chat with one another**
 
 # Live Link
-### https://suhravchatapp.herokuapp.com/
+### https://chatapp-0b7k.onrender.com
 
 # .env file structure
 ```sh
@@ -55,7 +55,7 @@ APP_URL =
 
 #Application Images
 
-[![Login Page](https://i.ibb.co/0yS9GS3/Login-Chat-Application.png "Login Page")]
+![Login Page](https://i.ibb.co/0yS9GS3/Login-Chat-Application.png "Login Page")
 
 ![Chat](https://i.ibb.co/5kSmNwZ/Inbox-Chat-Application.png  "Chat")
 
